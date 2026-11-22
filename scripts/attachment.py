@@ -1,5 +1,6 @@
 """Emit a Hermes Desktop attachment line for each verified local file."""
 import argparse
+import sys
 from pathlib import Path
 
 
@@ -13,6 +14,7 @@ def attachment_line(value):
 
 
 if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("files", nargs="+")
     args = parser.parse_args()

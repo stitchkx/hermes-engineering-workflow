@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -70,7 +71,11 @@ class AttachmentTests(unittest.TestCase):
             report = root / "验收 清单.md"
             report.write_text("OK", encoding="utf-8")
             command = [sys.executable, str(ROOT / "scripts/attachment.py"), report.name]
-            good = subprocess.run(command, cwd=root, capture_output=True, text=True, check=True)
+            good = subprocess.run(
+                command, cwd=root, capture_output=True, encoding="utf-8",
+                env={**os.environ, "PYTHONIOENCODING": "cp1252"},
+            )
+            self.assertEqual(good.returncode, 0, good.stderr)
             self.assertEqual(good.stdout.strip(), "MEDIA:" + report.as_posix())
             bad = subprocess.run(command + ["missing.json"], cwd=root, capture_output=True)
             self.assertNotEqual(bad.returncode, 0)
