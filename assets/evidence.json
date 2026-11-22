@@ -1,0 +1,12 @@
+{
+  "revision": "example-revision",
+  "checks": [
+    {
+      "criterion": "The CLI preserves an explicit zero value",
+      "entry": "python example_cli.py zero.json",
+      "expected": "0",
+      "status": "unverified",
+      "reason": "Example record. Replace with a real run and its observed output."
+    }
+  ]
+}
