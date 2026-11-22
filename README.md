@@ -33,7 +33,7 @@ The acceptance checker validates the evidence record. The original CLI, API, UI,
 
 ## Model routing
 
-Say “自动选模型，优先订阅” to check suitable Magpie routes first, then other configured providers when needed. Say “使用 `<provider>` 的 `<full-model-id>`” to pin a task. [Model routing](references/model-routing.md) covers session, Kanban, and delegation behavior. Run `python scripts/discover_models.py` from this checkout to view configured candidates in precedence order, with `--profile <name>` for another profile. The inventory is read-only and shows provider keys and model IDs.
+Say “自动选模型，优先订阅” to check suitable Magpie routes first, then other configured providers when needed. Say “使用 `<provider>` 的 `<full-model-id>`” to pin a task. [Delivery checks](references/delivery.md) cover independent calculation checks, mobile reports, Desktop attachments, and attended or unattended handoffs. [Model routing](references/model-routing.md) covers session, Kanban, and delegation behavior. Run `python scripts/discover_models.py` from this checkout to view configured candidates in precedence order, with `--profile <name>` for another profile. The inventory is read-only and shows provider keys and model IDs.
 
 ## Scope and provenance
 

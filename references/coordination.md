@@ -4,7 +4,7 @@ Use the current session for short work. Start one execution owner and an indepen
 
 ## Group before opening another conversation
 
-In Hermes Desktop, use `desktop_project` or the Project UI to look up the project by identity and workspace. Reuse it or create one with the actual project directory. Open related desktop conversations there. Read back the target project and session placement after creating or moving a chat. A desktop move can re-anchor the working directory. Preserve the original workspace of running workers and worktrees, and index them by profile, durable session ID or link, task, path, and artifact. If the surface cannot group sessions, maintain that index in the project workspace. Check that records can be found again.
+In Hermes Desktop, use `desktop_project` or the Project UI to look up the project by identity and workspace. Reuse it or create one with the actual project directory. Open related desktop conversations there. Read back the target project and session placement after creating or moving a chat. A desktop move can re-anchor the working directory. Preserve the original workspace of running workers and worktrees, and index them by profile, durable session ID or link, task, path, and artifact. If the surface cannot group sessions, store the index in a private directory outside the shared checkout and release artifacts. For a local index inside a Git workspace, verify its path with `git check-ignore -- <path>` and confirm `git ls-files -- <path>` returns no tracked file before writing session metadata. Keep private session links and absolute workspace paths out of shared task briefs and commits. Check that records can be found again.
 
 ## Pick one owner for execution state
 

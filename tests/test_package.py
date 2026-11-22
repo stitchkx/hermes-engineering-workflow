@@ -63,6 +63,20 @@ class PackageTests(unittest.TestCase):
             self.assertFalse((root / "skills" / NAME).exists())
 
 
+class AttachmentTests(unittest.TestCase):
+    def test_verified_paths_and_missing_member(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            report = root / "验收 清单.md"
+            report.write_text("OK", encoding="utf-8")
+            command = [sys.executable, str(ROOT / "scripts/attachment.py"), report.name]
+            good = subprocess.run(command, cwd=root, capture_output=True, text=True, check=True)
+            self.assertEqual(good.stdout.strip(), "MEDIA:" + report.as_posix())
+            bad = subprocess.run(command + ["missing.json"], cwd=root, capture_output=True)
+            self.assertNotEqual(bad.returncode, 0)
+            self.assertEqual(bad.stdout, b"")
+
+
 class EvidenceTests(unittest.TestCase):
     def setUp(self):
         self.record = json.loads((ROOT / "assets/evidence.json").read_text(encoding="utf-8"))

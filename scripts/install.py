@@ -15,6 +15,8 @@ RUNTIME_FILES = (
     "references/coordination.md",
     "references/model-routing.md",
     "references/maintenance.md",
+    "references/delivery.md",
+    "scripts/attachment.py",
     "assets/evidence.json",
     "scripts/check_evidence.py",
     "scripts/discover_models.py",
