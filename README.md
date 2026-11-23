@@ -1,10 +1,14 @@
-# Hermes Engineering Workflow
+# HerMAS Workflow
+
+**Hermes Multi-Agent System Workflow** · Hermes 多智能体工程工作流
+
+在 Hermes 中使用 `-s hermes-engineering-workflow` 调用此 Skill。
 
 A single local skill for investigating, changing, verifying, and handing off software work in Hermes Agent. Start with an observable goal. Work through the smallest relevant playbook. For multi-session work, group recoverable conversations within one Hermes Project or retain their session references in a project index. 本技能可直接接收中文任务。
 
 ## 项目介绍与致谢
 
-Hermes Engineering Workflow 是供 Hermes Agent 加载的独立工程技能。它把一项需求从调查带到交付：先写出使用者能观察到的完成条件，再沿实际入口开发和验证，最后把产物、仍待判断的问题和恢复位置交给下一位经办人。它可以从一个本地 CLI 任务开始，也可配合 Hermes Projects、Kanban 和独立 worker 处理跨会话工作。[Hermes Skills 文档](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)
+HerMAS Workflow 是供 Hermes Agent 加载的独立工程技能。它把一项需求从调查带到交付：先写出使用者能观察到的完成条件，再沿实际入口开发和验证，最后把产物、仍待判断的问题和恢复位置交给下一位经办人。它可以从一个本地 CLI 任务开始，也可配合 Hermes Projects、Kanban 和独立 worker 处理跨会话工作。[Hermes Skills 文档](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)
 
 ### 工程方法来源：Lauren Tan（poteto）的 pstack
 
